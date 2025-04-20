@@ -23,6 +23,4 @@ A web-based GUI for the RMIS humanoid robot project, displaying messages from th
 ## Usage
 1. Start the web server:
    ```bash
-   cd ~/rmis_interface_ws
-   source install/setup.bash
    ros2 launch rmis_web_launcher web_launcher_launch.py
