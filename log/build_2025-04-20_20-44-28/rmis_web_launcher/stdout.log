@@ -1,0 +1,36 @@
+running egg_info
+creating ../../build/rmis_web_launcher/rmis_web_launcher.egg-info
+writing ../../build/rmis_web_launcher/rmis_web_launcher.egg-info/PKG-INFO
+writing dependency_links to ../../build/rmis_web_launcher/rmis_web_launcher.egg-info/dependency_links.txt
+writing entry points to ../../build/rmis_web_launcher/rmis_web_launcher.egg-info/entry_points.txt
+writing requirements to ../../build/rmis_web_launcher/rmis_web_launcher.egg-info/requires.txt
+writing top-level names to ../../build/rmis_web_launcher/rmis_web_launcher.egg-info/top_level.txt
+writing manifest file '../../build/rmis_web_launcher/rmis_web_launcher.egg-info/SOURCES.txt'
+reading manifest file '../../build/rmis_web_launcher/rmis_web_launcher.egg-info/SOURCES.txt'
+writing manifest file '../../build/rmis_web_launcher/rmis_web_launcher.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/enesisaoglu/rmis_interface_ws/build/rmis_web_launcher/build
+creating /home/enesisaoglu/rmis_interface_ws/build/rmis_web_launcher/build/lib
+creating /home/enesisaoglu/rmis_interface_ws/build/rmis_web_launcher/build/lib/rmis_web_launcher
+copying rmis_web_launcher/web_launcher.py -> /home/enesisaoglu/rmis_interface_ws/build/rmis_web_launcher/build/lib/rmis_web_launcher
+copying rmis_web_launcher/__init__.py -> /home/enesisaoglu/rmis_interface_ws/build/rmis_web_launcher/build/lib/rmis_web_launcher
+running install
+running install_lib
+creating /home/enesisaoglu/rmis_interface_ws/install/rmis_web_launcher/lib/python3.10/site-packages/rmis_web_launcher
+copying /home/enesisaoglu/rmis_interface_ws/build/rmis_web_launcher/build/lib/rmis_web_launcher/web_launcher.py -> /home/enesisaoglu/rmis_interface_ws/install/rmis_web_launcher/lib/python3.10/site-packages/rmis_web_launcher
+copying /home/enesisaoglu/rmis_interface_ws/build/rmis_web_launcher/build/lib/rmis_web_launcher/__init__.py -> /home/enesisaoglu/rmis_interface_ws/install/rmis_web_launcher/lib/python3.10/site-packages/rmis_web_launcher
+byte-compiling /home/enesisaoglu/rmis_interface_ws/install/rmis_web_launcher/lib/python3.10/site-packages/rmis_web_launcher/web_launcher.py to web_launcher.cpython-310.pyc
+byte-compiling /home/enesisaoglu/rmis_interface_ws/install/rmis_web_launcher/lib/python3.10/site-packages/rmis_web_launcher/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/enesisaoglu/rmis_interface_ws/install/rmis_web_launcher/share/ament_index
+creating /home/enesisaoglu/rmis_interface_ws/install/rmis_web_launcher/share/ament_index/resource_index
+creating /home/enesisaoglu/rmis_interface_ws/install/rmis_web_launcher/share/ament_index/resource_index/packages
+copying resource/rmis_web_launcher -> /home/enesisaoglu/rmis_interface_ws/install/rmis_web_launcher/share/ament_index/resource_index/packages
+copying package.xml -> /home/enesisaoglu/rmis_interface_ws/install/rmis_web_launcher/share/rmis_web_launcher
+copying launch/web_launcher_launch.py -> /home/enesisaoglu/rmis_interface_ws/install/rmis_web_launcher/share/rmis_web_launcher
+running install_egg_info
+Copying ../../build/rmis_web_launcher/rmis_web_launcher.egg-info to /home/enesisaoglu/rmis_interface_ws/install/rmis_web_launcher/lib/python3.10/site-packages/rmis_web_launcher-0.0.0-py3.10.egg-info
+running install_scripts
+Installing web_launcher script to /home/enesisaoglu/rmis_interface_ws/install/rmis_web_launcher/lib/rmis_web_launcher
+writing list of installed files to '/home/enesisaoglu/rmis_interface_ws/build/rmis_web_launcher/install.log'

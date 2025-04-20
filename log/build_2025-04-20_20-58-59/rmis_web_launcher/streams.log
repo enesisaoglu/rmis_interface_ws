@@ -1,0 +1,24 @@
+[0.342s] Invoking command in '/home/enesisaoglu/rmis_interface_ws/src/rmis_web_launcher': PYTHONPATH=/home/enesisaoglu/rmis_interface_ws/build/rmis_web_launcher/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/enesisaoglu/rmis_interface_ws/install/rmis_web_launcher/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rmis_web_launcher build --build-base /home/enesisaoglu/rmis_interface_ws/build/rmis_web_launcher/build install --record /home/enesisaoglu/rmis_interface_ws/build/rmis_web_launcher/install.log --single-version-externally-managed install_data
+[0.470s] running egg_info
+[0.470s] writing ../../build/rmis_web_launcher/rmis_web_launcher.egg-info/PKG-INFO
+[0.470s] writing dependency_links to ../../build/rmis_web_launcher/rmis_web_launcher.egg-info/dependency_links.txt
+[0.470s] writing entry points to ../../build/rmis_web_launcher/rmis_web_launcher.egg-info/entry_points.txt
+[0.470s] writing requirements to ../../build/rmis_web_launcher/rmis_web_launcher.egg-info/requires.txt
+[0.470s] writing top-level names to ../../build/rmis_web_launcher/rmis_web_launcher.egg-info/top_level.txt
+[0.471s] reading manifest file '../../build/rmis_web_launcher/rmis_web_launcher.egg-info/SOURCES.txt'
+[0.472s] writing manifest file '../../build/rmis_web_launcher/rmis_web_launcher.egg-info/SOURCES.txt'
+[0.472s] running build
+[0.472s] running build_py
+[0.472s] copying rmis_web_launcher/web_launcher.py -> /home/enesisaoglu/rmis_interface_ws/build/rmis_web_launcher/build/lib/rmis_web_launcher
+[0.472s] running install
+[0.472s] running install_lib
+[0.472s] copying /home/enesisaoglu/rmis_interface_ws/build/rmis_web_launcher/build/lib/rmis_web_launcher/web_launcher.py -> /home/enesisaoglu/rmis_interface_ws/install/rmis_web_launcher/lib/python3.10/site-packages/rmis_web_launcher
+[0.473s] byte-compiling /home/enesisaoglu/rmis_interface_ws/install/rmis_web_launcher/lib/python3.10/site-packages/rmis_web_launcher/web_launcher.py to web_launcher.cpython-310.pyc
+[0.473s] running install_data
+[0.473s] running install_egg_info
+[0.474s] removing '/home/enesisaoglu/rmis_interface_ws/install/rmis_web_launcher/lib/python3.10/site-packages/rmis_web_launcher-0.0.0-py3.10.egg-info' (and everything under it)
+[0.474s] Copying ../../build/rmis_web_launcher/rmis_web_launcher.egg-info to /home/enesisaoglu/rmis_interface_ws/install/rmis_web_launcher/lib/python3.10/site-packages/rmis_web_launcher-0.0.0-py3.10.egg-info
+[0.474s] running install_scripts
+[0.485s] Installing web_launcher script to /home/enesisaoglu/rmis_interface_ws/install/rmis_web_launcher/lib/rmis_web_launcher
+[0.485s] writing list of installed files to '/home/enesisaoglu/rmis_interface_ws/build/rmis_web_launcher/install.log'
+[0.499s] Invoked command in '/home/enesisaoglu/rmis_interface_ws/src/rmis_web_launcher' returned '0': PYTHONPATH=/home/enesisaoglu/rmis_interface_ws/build/rmis_web_launcher/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/enesisaoglu/rmis_interface_ws/install/rmis_web_launcher/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rmis_web_launcher build --build-base /home/enesisaoglu/rmis_interface_ws/build/rmis_web_launcher/build install --record /home/enesisaoglu/rmis_interface_ws/build/rmis_web_launcher/install.log --single-version-externally-managed install_data

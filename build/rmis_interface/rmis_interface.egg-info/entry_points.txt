@@ -1,0 +1,3 @@
+[console_scripts]
+launch_web = rmis_interface.web_launcher:main
+

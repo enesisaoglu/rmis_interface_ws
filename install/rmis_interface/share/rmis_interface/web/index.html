@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>RMIS Interface Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+    }
+    #initial-view {
+      display: block;
+    }
+    #main-interface {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- SADECE BAĞLANTI YOKKEN GÖRÜNEN EKRAN -->
+  <div id="initial-view">
+    <h1>RMIS Interface Demo</h1>
+    <p>To see this page update:</p>
+    <ul>
+      <li>Run a Rosbridge connection at <code>ws://localhost:9090</code></li>
+      <li>Start publishing ROS messages to <code>/my_topic</code></li>
+    </ul>
+    <p>Connection: <span id="status" style="font-weight: bold; color: red;">closed</span></p>
+  </div>
+
+  <!-- DİĞER TÜM YAPILAR BAĞLANTI OLDUKTAN SONRA YÜKLENECEK -->
+  <div id="main-interface"></div>
+
+  <!-- ROSLIB bağlantısı -->
+  <script src="https://cdn.jsdelivr.net/npm/roslib@1/build/roslib.min.js"></script>
+  <script>
+    const ros = new ROSLIB.Ros({ url: "ws://localhost:9090" });
+
+    ros.on("connection", () => {
+      document.getElementById("status").innerText = "successful";
+      document.getElementById("status").style.color = "green";
+      document.getElementById("initial-view").style.display = "none";
+      loadMainInterface();
+    });
+
+    ros.on("close", () => {
+      document.getElementById("status").innerText = "closed";
+      document.getElementById("status").style.color = "red";
+    });
+
+    function loadMainInterface() {
+      // Tüm layout bağlantıdan sonra dinamik olarak yükleniyor
+      const html = `
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+      <style>
+        html, body {
+          height: 100%;
+          margin: 0;
+          overflow: hidden;
+        }
+
+        #main-interface {
+          height: 100vh;
+          display: flex;
+        }
+
+        #left-panel {
+          width: 10%;
+          background-color: #f1f1f1;
+          padding: 10px;
+          overflow-y: auto;
+        }
+
+        #data-output {
+          max-height: 100%;
+          overflow-y: auto;
+          font-size: 0.85rem;
+          white-space: pre-wrap;
+        }
+
+        #center-panel {
+          width: 70%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 10px;
+          overflow: auto;
+          background-color: #ffffff;
+        }
+
+        #center-split {
+          display: none;
+          height: 100%;
+          width: 100%;
+        }
+
+        .half-height {
+          height: 50%;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid #ddd;
+        }
+
+        #right-panel {
+          width: 20%;
+          padding: 10px;
+          background-color: #f8f9fa;
+        }
+
+        .tab-content > .tab-pane {
+          display: none;
+        }
+
+        .tab-content > .active {
+          display: block;
+        }
+      </style>
+
+      <div id="left-panel">
+        <ul class="nav nav-tabs mb-2">
+          <li class="nav-item">
+            <span class="nav-link active">data_received</span>
+          </li>
+        </ul>
+        <div id="data-output"></div>
+      </div>
+
+      <div id="center-panel">
+        <div id="center-single">
+          <h3 class="text-center">camera_sensor_data</h3>
+        </div>
+        <div id="center-split">
+          <div class="half-height">
+            <h5>kinect_camera_sensor_data</h5>
+          </div>
+          <div class="half-height">
+            <h5>camera_sensor_data</h5>
+          </div>
+        </div>
+      </div>
+
+      <div id="right-panel">
+        <ul class="nav nav-tabs mb-3" id="modeTabs">
+          <li class="nav-item">
+            <button class="nav-link" id="manual-tab">Manual Mode</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" id="emergency-tab">Emergency Mode</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" id="auto-tab">Automatic Mode</button>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane" id="manual">
+            <p>Manual Mode Seçili</p>
+          </div>
+          <div class="tab-pane" id="emergency">
+            <p>Emergency Mode Seçili</p>
+          </div>
+          <div class="tab-pane" id="auto">
+            <p>Automatic Mode Seçili</p>
+          </div>
+        </div>
+      </div>
+      `;
+
+      const main = document.getElementById("main-interface");
+      main.innerHTML = html;
+      main.style.display = "flex";
+
+      setupTabs();
+      startListener();
+    }
+
+    function setupTabs() {
+      const manualTab = document.getElementById("manual-tab");
+      const centerSingle = document.getElementById("center-single");
+      const centerSplit = document.getElementById("center-split");
+
+      manualTab.addEventListener("click", () => {
+        centerSingle.style.display = "none";
+        centerSplit.style.display = "block";
+        setActiveTab("manual");
+      });
+
+      document.getElementById("emergency-tab").addEventListener("click", () => {
+        centerSingle.style.display = "flex";
+        centerSplit.style.display = "none";
+        setActiveTab("emergency");
+      });
+
+      document.getElementById("auto-tab").addEventListener("click", () => {
+        centerSingle.style.display = "flex";
+        centerSplit.style.display = "none";
+        setActiveTab("auto");
+      });
+    }
+
+    function setActiveTab(tabId) {
+      ["manual", "emergency", "auto"].forEach(id => {
+        const pane = document.getElementById(id);
+        if (pane) {
+          pane.classList.toggle("active", id === tabId);
+        }
+      });
+    }
+
+    function startListener() {
+      const listener = new ROSLIB.Topic({
+        ros: ros,
+        name: "/my_topic",
+        messageType: "std_msgs/String"
+      });
+
+      listener.subscribe((message) => {
+        const output = document.getElementById("data-output");
+        const div = document.createElement("div");
+        div.textContent = message.data;
+        output.appendChild(div);
+        output.scrollTop = output.scrollHeight;
+      });
+    }
+  </script>
+</body>
+</html>

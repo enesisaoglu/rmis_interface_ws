@@ -1,0 +1,24 @@
+running egg_info
+writing ../../build/rmis_interface/rmis_interface.egg-info/PKG-INFO
+writing dependency_links to ../../build/rmis_interface/rmis_interface.egg-info/dependency_links.txt
+writing entry points to ../../build/rmis_interface/rmis_interface.egg-info/entry_points.txt
+writing requirements to ../../build/rmis_interface/rmis_interface.egg-info/requires.txt
+writing top-level names to ../../build/rmis_interface/rmis_interface.egg-info/top_level.txt
+reading manifest file '../../build/rmis_interface/rmis_interface.egg-info/SOURCES.txt'
+writing manifest file '../../build/rmis_interface/rmis_interface.egg-info/SOURCES.txt'
+running build
+running build_py
+copying rmis_interface/web_launcher.py -> /home/enesisaoglu/rmis_interface_ws/build/rmis_interface/build/lib/rmis_interface
+running install
+running install_lib
+copying /home/enesisaoglu/rmis_interface_ws/build/rmis_interface/build/lib/rmis_interface/web_launcher.py -> /home/enesisaoglu/rmis_interface_ws/install/rmis_interface/lib/python3.10/site-packages/rmis_interface
+byte-compiling /home/enesisaoglu/rmis_interface_ws/install/rmis_interface/lib/python3.10/site-packages/rmis_interface/web_launcher.py to web_launcher.cpython-310.pyc
+running install_data
+creating /home/enesisaoglu/rmis_interface_ws/install/rmis_interface/share/rmis_interface/web
+copying rmis_interface/web/index.html -> /home/enesisaoglu/rmis_interface_ws/install/rmis_interface/share/rmis_interface/web
+running install_egg_info
+removing '/home/enesisaoglu/rmis_interface_ws/install/rmis_interface/lib/python3.10/site-packages/rmis_interface-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/rmis_interface/rmis_interface.egg-info to /home/enesisaoglu/rmis_interface_ws/install/rmis_interface/lib/python3.10/site-packages/rmis_interface-0.0.0-py3.10.egg-info
+running install_scripts
+Installing launch_web script to /home/enesisaoglu/rmis_interface_ws/install/rmis_interface/lib/rmis_interface
+writing list of installed files to '/home/enesisaoglu/rmis_interface_ws/build/rmis_interface/install.log'
